@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block style %}
+{{ super() }}
+
+    #login {
+            background-color: #16A085;
+    }
+
+    body {background: #CCFFFF;}
+
+    .login-form{
+    margin-top:60px;
+    border-radius:5px;
+    padding-bottom:20px;
+    background:white;
+    }
+
+    .title {
+
+    background: #007bbf
+    padding:10px;
+    text-align: center;
+    color: #black;
+    border-radius: 0px 0px 10px 10px;
+
+    }
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<div class="container" >
+
+<div class="login-form col-md-4 offset-md-4">
+
+    <h1 class="title" style="color: blue;padding-top: 15px">Login here</h1>
+<br/>
+ {%  for message in get_flashed_messages() %}
+        {{ message }} <br/>
+    {% endfor %}
+
+<div >
+<form  method="post" action="" >
+
+
+
+
+<p>{{ form.username.label }} <br/>
+    {{ form.username }}
+</p>
+
+    <p>
+        {{ form.password.label }} <br/>
+        {{ form.password }}
+
+    </p>
+       <p> {{ form.submit()}}</p>
+
+    <br/>
+
+
+    <!-- <input type="submit" value="Login">--->
+
+{{ form.csrf_token }}
+</form>
+</div>
+    <a href="/register" id="register"> <input type="button" value="Create an account!"></a>
+    <a href="/forgot" id="forgot">Forgot password?</a>
+
+</div>
+</div>
+
+
+
+{% endblock %}

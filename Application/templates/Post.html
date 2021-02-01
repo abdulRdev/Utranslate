@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block style %}
+{{ super() }}
+
+   <!---->
+#post {
+            background-color: #16A085;
+    }
+
+
+{% endblock %}
+
+
+
+{% block content %}
+<div style="margin-left:25px; margin-top: 40px; background-color: #ffe160}">
+    <h1 style="font-family: 'Comic Sans MS'"><strong>Hello <em>{{ user }} </em>!</strong></h1>
+
+    <div class="container">
+<h3>    What Can The Community Help You Translate today?
+    Simply enter what you want translated in to the text box below.</h3>
+
+<br/><br/>
+ <h4> Select your category and begin writing your post.</h4>
+<form method="post" action="">
+
+<p style="font-size:34px; font-family: 'Franklin Gothic Medium' ">
+   <strong> {{ form.select.label }}</strong>
+</p>
+ <p style="font-size:24px ">   {{ form.select }}
+
+</p>
+
+    <p style="font-size:34px; font-family: 'Franklin Gothic Medium' ">
+        <strong> {{ form.color.label }}</strong></p>
+
+      <p style="font-size:24px ">  {{ form.color }} </p>
+
+
+
+<p style="font-size:34px; font-family: 'Franklin Gothic Medium' ">
+  <strong> {{ form.date.label }}</strong></p>
+    <p style="font-size:24px ">{{ form.date }}</p>
+
+<br/>
+    <p style="font-size:34px; font-family: 'Franklin Gothic Medium' ">
+        <strong>{{ form.content.label }}</strong></p> </br>
+    <p style="font-size:24px ">
+     {{ form.content(cols="80", rows="4") }}</p>
+
+</p>
+{{ form.submit() }}
+   <tr>
+       <td>
+
+   </td>
+<td>
+    <button type="reset">Clear</button></td>
+</tr>
+    {{ form.csrf_token }}
+</form>
+
+</div></div>
+{% endblock %}

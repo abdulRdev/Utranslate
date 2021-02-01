@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block style %}
+{{ super() }}
+
+    #New {
+            background-color: #16A085;
+    }
+
+    table, button { margin-top: 45px; margin-left: 80px; border-collapse: collapse;}
+
+    button {margin-top: 2px; margin-right: 100%; width:150px;}
+
+    th { font-size: 24px;}
+
+    td { font-size: 18px; font-family: Arial;}
+{% endblock %}
+
+
+{% block content %}
+
+    <!--dummy data-->
+    <!--real will look similar (table structure)-->
+{% if go %}
+    {% for index in range( length )  %}
+<div class="row">
+<div class="col-sm-11">
+    <table border="1" style="border-color: black; border-width: medium;width:100%;" class="table table-bordered table-responsive">
+>
+    <tr style="background-color: #9cdde6">
+        <th>Name</th>
+        <th>Category</th>
+        <th>Post</th>
+        <th>Date</th>
+        <th>Likes</th>
+    </tr>
+    <tr style="background-color: {{ licolor[index] }}">
+        <td>{{ liname[index] }}</td>
+        <td>{{ licat[index] }}</td>
+        <td>{{ lipost[index] }}</td>
+        <td>{{ lidate[index] }}</td>
+        <td> 0 <a href="" style="text-decoration: none; color: black"> &hearts;</a></td>
+        </td>
+    </tr>
+    </table>
+</div>
+</div>
+        <button type="button" style="alignment: right " class="class=col-sm-offset-12; btn btn-info btn-lg">Reply</button>
+
+{% endfor %}
+{% endif %}
+
+
+<div class="row ">
+        <div class="col-sm-11">
+
+        <table style="border-color: black; border-width: medium" class="table table-bordered table-responsive">
+
+            <thead>
+              <tr style="background-color: #9cdde6">
+                <th style="" >Profile</th>
+                <th>Name</th>
+                <th>Post
+            </th>
+                <th>Likes</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr  style="background-color: lightgreen" >
+                  <td ><a href="#"><img src="https://image.shutterstock.com/image-vector/young-man-face-cartoon-600w-1224888760.jpg" height="55px" width="55px"></a>
+                 </td>
+                    <td> John Deere</td>
+                    <td>  Hey guys, how's it going? Can you tell me how to say this in French? "Hi, my name is John and I love cutting grass." Thanks in advance! </td>
+                     </td>
+                    <td> 22 <a href="" style="text-decoration: none; color: black"> &hearts;</a></td>
+                </tr>
+            </tbody>
+          </table>
+        <button type="button" style="alignment: right " class="class=col-sm-offset-12; btn btn-info btn-lg">Reply</button>
+        </div>
+
+ </div>
+
+
+
+
+
+<div class="row ">
+        <div class="col-sm-11 ">
+
+        <table style="border-color: black; border-width: medium" class="table table-bordered table-responsive">
+
+            <thead>
+              <tr style="background-color: #9cdde6">
+                <th style="" >Profile</th>
+                <th>Name</th>
+                <th>Post</th>
+                <th>Likes</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr  style="background-color: lightyellow" >
+                  <td ><a href="#" ><img src="https://st2.depositphotos.com/3687485/10944/v/950/depositphotos_109443302-stock-illustration-happy-woman-face-vector-illustration.jpg" height="55px" width="55px"></a>
+        </td>
+                    <td> Jessica Smith</td>
+                    <td> Hi everyone! Mind helping me with some German? How do I say, "How was your day?" and "Can I get you some coffee?" in German? Thank y'all! </td>
+                    <td> 17 <a href="" style="text-decoration: none; color: black"> &hearts;</a></td>
+                </tr>
+            </tbody>
+          </table>
+        <button type="button" style="alignment: right " class="class=col-sm-offset-12; btn btn-info btn-lg">Reply</button>
+        </div>
+
+ </div>
+
+
+<div class="row">
+        <div class="col-sm-11">
+
+        <table style="border-color: black; border-width: medium" class="table table-bordered table-responsive">
+
+            <thead>
+              <tr style="background-color: #9cdde6">
+                <th style="" >Profile</th>
+                <th>Name</th>
+                <th>Post</th>
+                <th>Likes</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+                <tr  style="background-color: #ffe160" >
+                  <td ><a href="#" ><img src="https://previews.123rf.com/images/jemastock/jemastock1810/jemastock181005474/110139019-pop-art-man-face-smiling-cartoon-vector-illustration-graphic-design.jpg" height="55px" width="55px"></a>
+        </td>
+                    <td> Wayne Batman</td>
+                    <td> How's it going Utranslators, just needed some help. So I have a meeting tomorrow and have to give half of it in Spanish! Can
+                    you guys help me with "Good afternoon everyone" and "Hope you guys enjoyed, I hope to see you soon" in Spanish?
+                    Please help me get through this &#128514</td>
+                    <td> 24 <a href="" style="text-decoration: none; color: black"> &hearts;</a></td>
+                </tr>
+            </tbody>
+          </table>
+        <button type="button" style="alignment: right " class="class=col-sm-offset-12; btn btn-info btn-lg">Solved</button>
+        </div>
+    </div>
+ </div>
+
+
+{% endblock %}

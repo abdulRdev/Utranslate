@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Home</title>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+
+
+    <style> {% block style %}
+
+        body {
+
+            background-image: url("../static/background.png")
+        }
+
+
+        #SideBar
+        {
+            width: 220px;
+            height: 100%;
+            background-color: #2C3E50;
+            overflow-y: hidden;
+
+            z-index: 1;
+            position: absolute;
+
+
+
+        }
+
+        .sidebar-nav
+        {
+        padding:0;
+            list-style: none;
+
+        }
+
+        .sidebar-nav  li
+        {
+            font-size: 32px;
+            text-indent: 20px;
+            line-height: 80px;
+        }
+
+        .sidebar-nav li a
+        {
+            display: block;
+            text-decoration: none;
+            color: #ddd;
+        }
+        .sidebar-nav li a:hover
+        {
+            background: #67a091;
+        }
+
+#nav-ul {
+
+width: 100%;
+display: inline-block;
+text-align: center;
+list-style: none;
+margin-left: 0px;
+
+}
+
+    #nav-li {
+    display: inline-block;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Segoe Script";
+    }
+
+
+{% endblock %}
+
+
+    </style>
+
+
+    </head>
+
+    <body>
+
+    <!---NavBar--->
+    <nav class="navbar bg-primary navbar-dark " >
+
+        <ul class="navbar-nav"id="nav-ul">
+
+            <li class="nav-item "><a href="/" class="nav-link" id="nav-li">Utranslate</a>
+            </li>
+        </ul>
+</nav>
+
+
+    <!--Side bar-->
+<div id="SideBar">
+
+    <ul class="sidebar-nav">
+        <li>
+            <a href="/new" id="New" >What's New</a>
+        </li>
+
+        <li><a href="/post" class="size" id="post">Post</a>
+        </li>
+
+        <li>
+            <a href="/translate" class="size" id="translate">Translated</a>
+        </li>
+
+        <li>
+            <a href="/login" class="size" id="login">{% if logged  %}Log Out {% else %}Log In{% endif %}</a>
+        </li>
+
+         <li>
+            <a href="/contact" class="size" id="contact">Contact Us</a>
+        </li>
+    </ul>
+
+</div>
+<!--- can add style in div like: -->
+<div style="padding-left: 220px">
+{% block content %} {% endblock %}
+</div>
+</body>
+</html>

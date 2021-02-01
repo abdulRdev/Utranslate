@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block style %}
+{{ super() }}
+
+    #login {
+            background-color: #16A085;
+    }
+
+    body {background: #CCFFFF;}
+
+    .login-form{
+    margin-top:60px;
+    border-radius:5px;
+    padding-bottom:20px;
+    background:white;
+    }
+
+    .title {
+
+    background: #007bbf
+    padding:10px;
+    text-align: center;
+    color: #black;
+    border-radius: 0px 0px 10px 10px;
+
+    }
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{%  for message in get_flashed_messages() %}
+        {{ message }}
+{% endfor %}
+
+<div class="container">
+
+<div class="login-form col-md-4 offset-md-4">
+
+    <h1 class="title" style="color: blue;">Reset Password</h1>
+<br/>
+
+<form  method="post" action="" >
+
+    {%  for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+    <p>
+        {{ form.newpass.label }} <br/>
+        {{ form.newpass }}
+
+    </p>
+
+     <p>
+        {{ form.newpass2.label }} <br/>
+        {{ form.newpass2 }}
+
+    </p>
+
+        {{ form.submit() }}
+
+    <br/><br/>
+
+
+{{ form.csrf_token }}
+</form>
+
+</div>
+</div>
+
+{% endblock %}

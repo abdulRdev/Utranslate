@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block style %}
+    {{ super() }}
+pre{
+    font-size:28px;
+ font-style:bold;
+
+    }
+.info {
+    font-size: 28px;
+    font-family: 'Deja Vu Sans Mono';
+    border-top: 25px;
+    color: blue;
+    }
+
+    #contact {
+        background:#16A085;
+    }
+
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 style="text-align: center; margin-top: 7%;"><em>For all inquiries, contact us through one of the ways below.<br/> It is a pleasure to be helping the community.</em></h1>
+
+    <br/>
+
+    <img src="static/community.png" alt="Community" style="margin-left: 270px; width: 1000px;height: 450px">
+
+    <br/><br/>
+
+    <div class="container" style="text-align: center;">
+    <div class="row">
+       <div class="col-sm-4 info">
+        <strong>  Give us a call</strong>
+       </div>
+
+        <div class="col-sm-4 info">
+          <strong> Send us an email</strong>
+        </div>
+
+        <div class="col-sm-4 info">
+            <strong> Or drop a message </strong>
+        </div>
+
+    </div>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+            <a href=""><img src="/static/phone%20icon.png" alt="Phone image" width="115" height="115">
+            </a>
+            </div>
+
+            <div class="col-sm-4">
+            <a href=""><img src="https://cdn4.iconfinder.com/data/icons/simple-soft/512/open_mail-512.png" alt="Email image" width="115" height="115">
+             </a>
+            </div>
+
+             <div class="col-sm-4">
+             <a href=""><img src="https://budrich.eu/wp-content/uploads/2019/05/icon-2083456_1920-e1556788010896-1024x489.png"
+              alt="Social platforms" width="246" height="115">
+                </a>
+            </div>
+
+
+        </div>
+     </div>
+
+
+
+
+
+{% endblock %}
